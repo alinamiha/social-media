@@ -1,13 +1,80 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*body {*/
+/*  margin: 0;*/
+/*  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',*/
+/*    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',*/
+/*    sans-serif;*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*  -moz-osx-font-smoothing: grayscale;*/
+/*}*/
+
+/*code {*/
+/*  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',*/
+/*    monospace;*/
+/*}*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app-wrapper{
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-template-areas: "header header" "sidebar content";
 }
+
+header {
+    grid-area: header;
+    /*width: 100%;*/
+    /*height: auto;*/
+    /*background-color: #f8b430;*/
+}
+.sidebar{
+    grid-area: sidebar;
+}
+.content{
+    grid-area: content;
+}
+
+/*.container {*/
+/*    max-width: 1200px;*/
+/*    width: 100%;*/
+/*}*/
+
+/*.header-wrap {*/
+/*    display: grid;*/
+/*    grid-template-columns: 1fr 1fr 1fr;*/
+/*    padding: 10px;*/
+/*}*/
+
+/*.header-wrap .menu-header {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: end;*/
+/*}*/
+
+/*.header-wrap .menu-header .logo {*/
+/*    margin: 20px 0;*/
+/*}*/
+
+/*.header-wrap .menu-header .logo img {*/
+/*    width: 200px;*/
+/*}*/
+
+/*.header-wrap .menu-header li {*/
+/*    padding: 0 22px;*/
+/*    text-transform: uppercase;*/
+/*    list-style: none;*/
+/*}*/
+
+/*.header-wrap .menu-header li a {*/
+/*    text-decoration: none;*/
+/*    color: #7e7e7e;*/
+/*    font-family: 'Playfair Display', serif;*/
+/*    line-height: 16px;*/
+/*    font-size: 17px;*/
+/*    font-weight: 400;*/
+/*}*/
