@@ -1,0 +1,6 @@
+header {
+    grid-area: header;
+    /*width: 100%;*/
+    /*height: auto;*/
+    background-color: #f8b430;
+}

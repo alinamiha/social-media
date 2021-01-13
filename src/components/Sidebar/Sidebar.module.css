@@ -1,0 +1,24 @@
+.sidebar{
+    grid-area: sidebar;
+    background-color: #f8b430;
+}
+.item{
+    list-style: none;
+    height: 30px;
+    padding: 10px;
+    margin: 20px;
+}
+.item a{
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+}
+.item a:hover{
+    text-decoration: underline;
+}
+.item a.active{
+    color: red;
+}

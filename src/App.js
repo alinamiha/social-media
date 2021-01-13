@@ -1,8 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import Content from "./components/Content";
+import Header from "./components/Header/Header";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Profile from "./components/Profile/Profile";
+import Dialog from "./components/Dialog/Dialog";
+import {BrowserRouter, Route} from "react-router-dom";
+import React from 'react'
+import ReactDOM from 'react-dom';
+
 
 
 // const App = () => {
@@ -25,15 +30,37 @@ import Content from "./components/Content";
 //     </div>
 //   );
 // }
-const App = () => {
+const App = (props) => {
     return (
-        <div className="app-wrapper">
-        <Header />
-        <Sidebar />
-        <Content />
-        </div>
+        <BrowserRouter>
+            <div className="app-wrapper">
+                <Header/>
+                <Sidebar state={props.state.sidebar}/>
+                <div className="content">
+                    <Route path='/profile'
+                           render={ () => <Profile
+                               profile={props.state.profile}
+                               addPost={props.addPost}
+                               updatePostText={props.updatePostText}/>}/>
+                    <Route path='/dialogs'
+                           render={ () => <Dialog
+                               dialog={props.state.dialog}
+                               addMessage={props.addMessage}
+                               updateMessageText={props.updateMessageText}/>}/>
+                </div>
+            </div>
+        </BrowserRouter>
     );
 }
 
-
 export default App;
+
+
+
+
+
+
+
+
+
+

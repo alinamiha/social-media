@@ -24,20 +24,15 @@
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
     grid-template-areas: "header header" "sidebar content";
+    grid-gap: 15px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
-header {
-    grid-area: header;
-    /*width: 100%;*/
-    /*height: auto;*/
-    /*background-color: #f8b430;*/
-}
-.sidebar{
-    grid-area: sidebar;
-}
-.content{
-    grid-area: content;
-}
+
+
+
 
 /*.container {*/
 /*    max-width: 1200px;*/
