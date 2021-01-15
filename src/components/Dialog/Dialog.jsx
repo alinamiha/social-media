@@ -8,11 +8,11 @@ const Dialog = (props) => {
     let messageInput= React.createRef()
     let createMessage = () => {
         let textField = messageInput.current.value
-        props.addMessage(textField)
+        props.dispatch({type: "ADD-MESSAGE", newText: textField})
     }
     let messageTextChange = () => {
         let textField = messageInput.current.value
-        props.updateMessageText(textField)
+        props.dispatch({type: "UPDATE-MESSAGE-TEXT", newText: textField})
     }
 
     return (

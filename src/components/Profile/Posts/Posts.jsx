@@ -8,11 +8,11 @@ const Posts = (props) => {
 
     let createPost = () => {
         let textField = newTextarea.current.value
-        props.addPost(textField)
+        props.dispatch({type: "ADD-POST", newText: textField})
     }
     let postTextChange = () => {
         let textField = newTextarea.current.value
-        props.updatePostText(textField)
+        props.dispatch({type: "UPDATE-POST-TEXT", newText: textField})
     }
 
     return (

@@ -7,6 +7,7 @@ import Dialog from "./components/Dialog/Dialog";
 import {BrowserRouter, Route} from "react-router-dom";
 import React from 'react'
 import ReactDOM from 'react-dom';
+import store from "./redux/state";
 
 
 
@@ -40,13 +41,11 @@ const App = (props) => {
                     <Route path='/profile'
                            render={ () => <Profile
                                profile={props.state.profile}
-                               addPost={props.addPost}
-                               updatePostText={props.updatePostText}/>}/>
+                               dispatch={props.dispatch}/>}/>
                     <Route path='/dialogs'
                            render={ () => <Dialog
                                dialog={props.state.dialog}
-                               addMessage={props.addMessage}
-                               updateMessageText={props.updateMessageText}/>}/>
+                               dispatch={props.dispatch}/>}/>
                 </div>
             </div>
         </BrowserRouter>

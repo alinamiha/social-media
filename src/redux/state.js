@@ -37,6 +37,10 @@ let store = {
     getState() {
         return this._state
     },
+    subscribe (observer) {
+        this._renderDom = observer
+    },
+
     addPost () {
         let post = {
             id: 0,
@@ -65,9 +69,32 @@ let store = {
         this._renderDom(this._state)
 
     },
-    subscribe (observer) {
-        this._renderDom = observer
-    },
+
+    dispatch(action){
+        if(action.type === "ADD-POST"){
+            let post = {
+                id: 0,
+                title: this._state.profile.newPostText,
+            }
+            this._state.profile.posts.push(post)
+            this._state.profile.newPostText = ''
+            this._renderDom(this._state)
+        } else if(action.type === "UPDATE-POST-TEXT"){
+            this._state.profile.newPostText = action.newText
+            this._renderDom(this._state)
+        } else if(action.type === "ADD-MESSAGE"){
+            let message = {
+                id: 0,
+                title: this._state.dialog.newMessage,
+            }
+            this._state.dialog.messages.push(message)
+            this._state.dialog.newMessage = ''
+            this._renderDom(this._state)
+        } else if(action.type === "UPDATE-MESSAGE-TEXT"){
+            this._state.dialog.newMessage = action.newText
+            this._renderDom(this._state)
+        }
+    }
 
 }
 
